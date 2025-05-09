@@ -11,3 +11,8 @@ export const initQueries = [
     `INSERT INTO user (email, username) VALUES ('test@example.com', 'test');`,
 ];
 export const testQuery = `SELECT * FROM user WHERE id = 1;`;
+export const testUser = {
+    id: 1,
+    username: 'test',
+    email: 'test@example.com',
+} as const;

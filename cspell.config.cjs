@@ -4,6 +4,8 @@ module.exports = {
     ...baseConfig,
     ignorePaths: [
         ...baseConfig.ignorePaths,
+        'src/generated/',
+        'src/prisma/better-sqlite3-adapter.ts',
     ],
     words: [
         ...baseConfig.words,

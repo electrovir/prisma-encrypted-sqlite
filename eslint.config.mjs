@@ -9,6 +9,8 @@ export default [
     {
         ignores: [
             /** Add file globs that should be ignored. */
+            'src/prisma/better-sqlite3-adapter.ts',
+            'src/generated/',
         ],
     },
     {

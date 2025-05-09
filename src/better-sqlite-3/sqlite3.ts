@@ -3,9 +3,7 @@ import {existsSync} from 'node:fs';
 import {databaseEncryptionSecret, initQueries} from './queries.js';
 
 export function connectToDatabase(filePath: string): Database {
-    if (!existsSync(filePath)) {
-        initDatabase(filePath);
-    }
+    initDatabase(filePath);
 
     const database = sqlite(filePath, {});
     database.pragma(`key='${databaseEncryptionSecret}'`);
@@ -13,7 +11,10 @@ export function connectToDatabase(filePath: string): Database {
     return database;
 }
 
-function initDatabase(filePath: string) {
+export function initDatabase(filePath: string) {
+    if (existsSync(filePath)) {
+        return;
+    }
     const database = sqlite(filePath, {});
     database.pragma('journal_mode = WAL');
     database.pragma(`rekey='${databaseEncryptionSecret}'`);

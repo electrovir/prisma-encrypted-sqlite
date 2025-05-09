@@ -6,7 +6,12 @@ const baseConfig = defineConfig({
         // enter file exceptions by rule name here
         'no-orphans': {
             from: [
-                'src/index\\.ts$',
+                'src/generated/prisma/runtime/',
+            ],
+        },
+        'no-deprecated-core': {
+            from: [
+                'src/generated/prisma/runtime/',
             ],
         },
     },
