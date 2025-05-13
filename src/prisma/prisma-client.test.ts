@@ -3,7 +3,7 @@ import {describe, it} from '@augment-vir/test';
 import {testUser} from '../better-sqlite-3/queries.js';
 import {createPrismaClient} from './prisma-client.js';
 
-describe('prisma', () => {
+describe('prisma with hacked adapter', () => {
     it('can read an encrypted database', async () => {
         const prismaClient = createPrismaClient();
 

@@ -1,7 +1,8 @@
 generator client {
-    provider        = "prisma-client-js"
-    previewFeatures = ["driverAdapters"]
+    provider        = "prisma-client"
+    previewFeatures = ["queryCompiler", "driverAdapters"]
     output          = "../src/generated/prisma"
+    moduleFormat    = "esm"
 }
 
 datasource db {
@@ -12,5 +13,5 @@ datasource db {
 model User {
     id       Int    @id
     username String
-    email    String
+    email    String /// @encrypted
 }
